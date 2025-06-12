@@ -58,7 +58,7 @@ A fast-paced 2D space shooter game made with the Godot Engine. You control a spa
 
 ---
 
-## 📂 Project Structure
+<!-- ## 📂 Project Structure
 
 space-shooter-game/
 ├── assets/
@@ -88,7 +88,7 @@ space-shooter-game/
 | | └── startButton.gd
 └── README.md
 
----
+--- -->
 
 ## 🚀 Getting Started
 
