@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5fa6jc5o3t5p"]
+
+[ext_resource type="Texture2D" uid="uid://cqlulpq7oitsn" path="res://assets/background-purple.png" id="2_fdj8a"]
+[ext_resource type="Script" uid="uid://dngy0s71i1t3t" path="res://Scenes/StartScene/startButton.gd" id="3_fdj8a"]
+
+[sub_resource type="GDScript" id="GDScript_qms4j"]
+script/source = "extends Node2D
+
+
+func _on_start_button_pressed() -> void:
+	pass # Replace with function body.
+"
+
+[node name="StartMenu" type="Node2D"]
+script = SubResource("GDScript_qms4j")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(200, 300)
+scale = Vector2(1.04, 1.54)
+texture = ExtResource("2_fdj8a")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 104.0
+offset_right = 376.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 50
+text = "Space Shooter"
+
+[node name="startButton" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 392.0
+offset_right = 336.0
+offset_bottom = 469.0
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+script = ExtResource("3_fdj8a")
+
+[connection signal="pressed" from="startButton" to="startButton" method="_on_pressed"]

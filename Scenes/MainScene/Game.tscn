@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://5yah6c2cq4cq"]
+
+[ext_resource type="Texture2D" uid="uid://cqlulpq7oitsn" path="res://assets/background-purple.png" id="1_62xxq"]
+[ext_resource type="PackedScene" uid="uid://bmgeoy33rjg64" path="res://entities/player/player.tscn" id="2_n46vv"]
+[ext_resource type="Texture2D" uid="uid://bki5qlwer0uiv" path="res://assets/horizontal_bar_red.png" id="3_0nivj"]
+[ext_resource type="Script" uid="uid://ce047jegvwwht" path="res://entities/enemy_spawner/enemy_spawner.gd" id="4_orim0"]
+[ext_resource type="AudioStream" uid="uid://c7ajrvitk4wh0" path="res://assets/Musics/Space Heroes.ogg" id="5_n46vv"]
+[ext_resource type="Script" uid="uid://boifi8buexwle" path="res://Scenes/MainScene/background_sound.gd" id="6_0nivj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smx3j"]
+size = Vector2(411.5, 7)
+
+[node name="GameManager" type="Node2D"]
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+position = Vector2(200.5, 301)
+scale = Vector2(1.0175, 1.52)
+texture = ExtResource("1_62xxq")
+
+[node name="Player" parent="." instance=ExtResource("2_n46vv")]
+position = Vector2(199, 559)
+
+[node name="Boundary" type="Area2D" parent="."]
+position = Vector2(194, 482)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(7.25, 2.5)
+shape = SubResource("RectangleShape2D_smx3j")
+
+[node name="HorizontalBarRed" type="Sprite2D" parent="Boundary"]
+position = Vector2(6.50002, 2.5)
+scale = Vector2(3.13077, 0.5)
+texture = ExtResource("3_0nivj")
+
+[node name="Bullets" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+script = ExtResource("4_orim0")
+
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_n46vv")
+script = ExtResource("6_0nivj")
